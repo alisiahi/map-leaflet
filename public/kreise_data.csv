@@ -1,0 +1,434 @@
+AGS,GEN,question_01,question_02
+1001,Flensburg,91,41
+1002,Kiel,31,42
+1003,Lübeck,44,95
+1004,Neumünster,91,35
+1051,Dithmarschen,30,84
+1053,Herzogtum Lauenburg,43,24
+1054,Nordfriesland,93,100
+1055,Ostholstein,47,92
+1056,Pinneberg,78,58
+1057,Plön,86,90
+1058,Rendsburg-Eckernförde,88,73
+1059,Schleswig-Flensburg,56,14
+1060,Segeberg,61,40
+1061,Steinburg,69,42
+1062,Stormarn,80,67
+2000,Hamburg,94,50
+3101,Braunschweig,51,18
+3102,Salzgitter,49,23
+3103,Wolfsburg,58,52
+3151,Gifhorn,74,35
+3153,Goslar,57,40
+3154,Helmstedt,95,81
+3155,Northeim,45,67
+3157,Peine,65,28
+3158,Wolfenbüttel,43,57
+3159,Göttingen,100,16
+3241,Region Hannover,51,56
+3251,Diepholz,37,98
+3252,Hameln-Pyrmont,46,58
+3254,Hildesheim,47,70
+3255,Holzminden,21,88
+3256,Nienburg (Weser),15,49
+3257,Schaumburg,20,41
+3351,Celle,52,43
+3352,Cuxhaven,54,70
+3353,Harburg,86,50
+3354,Lüchow-Dannenberg,84,64
+3355,Lüneburg,81,59
+3356,Osterholz,25,43
+3357,Rotenburg (Wümme),46,74
+3358,Heidekreis,54,54
+3359,Stade,24,65
+3360,Uelzen,17,63
+3361,Verden,83,51
+3401,Delmenhorst,13,49
+3402,Emden,24,67
+3403,Oldenburg (Oldb),31,33
+3404,Osnabrück,62,25
+3405,Wilhelmshaven,49,72
+3451,Ammerland,89,60
+3452,Aurich,55,44
+3453,Cloppenburg,56,72
+3454,Emsland,28,63
+3455,Friesland,31,74
+3456,Grafschaft Bentheim,63,53
+3457,Leer,62,92
+3458,Oldenburg,72,20
+3459,Osnabrück,60,27
+3460,Vechta,74,96
+3461,Wesermarsch,99,54
+3462,Wittmund,45,12
+4011,Bremen,22,39
+4012,Bremerhaven,11,89
+5111,Düsseldorf,87,41
+5112,Duisburg,71,77
+5113,Essen,65,55
+5114,Krefeld,46,31
+5116,Mönchengladbach,45,42
+5117,Mülheim an der Ruhr,21,91
+5119,Oberhausen,25,97
+5120,Remscheid,12,50
+5122,Solingen,91,40
+5124,Wuppertal,89,93
+5154,Kleve,91,29
+5158,Mettmann,34,69
+5162,Rhein-Kreis Neuss,22,92
+5166,Viersen,29,80
+5170,Wesel,69,10
+5314,Bonn,21,78
+5315,Köln,15,90
+5316,Leverkusen,47,46
+5334,Städteregion Aachen,20,31
+5358,Düren,21,50
+5362,Rhein-Erft-Kreis,16,40
+5366,Euskirchen,58,55
+5370,Heinsberg,13,100
+5374,Oberbergischer Kreis,63,23
+5378,Rheinisch-Bergischer Kreis,66,21
+5382,Rhein-Sieg-Kreis,10,74
+5512,Bottrop,65,74
+5513,Gelsenkirchen,73,87
+5515,Münster,40,22
+5554,Borken,95,35
+5558,Coesfeld,89,23
+5562,Recklinghausen,27,65
+5566,Steinfurt,78,41
+5570,Warendorf,98,84
+5711,Bielefeld,97,21
+5754,Gütersloh,60,21
+5758,Herford,73,61
+5762,Höxter,14,13
+5766,Lippe,25,85
+5770,Minden-Lübbecke,55,76
+5774,Paderborn,28,90
+5911,Bochum,39,93
+5913,Dortmund,95,18
+5914,Hagen,13,34
+5915,Hamm,56,29
+5916,Herne,75,20
+5954,Ennepe-Ruhr-Kreis,95,38
+5958,Hochsauerlandkreis,39,37
+5962,Märkischer Kreis,84,64
+5966,Olpe,41,21
+5970,Siegen-Wittgenstein,86,12
+5974,Soest,69,74
+5978,Unna,57,18
+6411,Darmstadt,36,15
+6412,Frankfurt am Main,74,29
+6413,Offenbach am Main,32,15
+6414,Wiesbaden,71,60
+6431,Bergstraße,63,60
+6432,Darmstadt-Dieburg,91,44
+6433,Groß-Gerau,18,31
+6434,Hochtaunuskreis,62,94
+6435,Main-Kinzig-Kreis,52,60
+6436,Main-Taunus-Kreis,65,94
+6437,Odenwaldkreis,70,30
+6438,Offenbach,97,53
+6439,Rheingau-Taunus-Kreis,97,92
+6440,Wetteraukreis,54,99
+6531,Gießen,92,22
+6532,Lahn-Dill-Kreis,55,63
+6533,Limburg-Weilburg,41,67
+6534,Marburg-Biedenkopf,40,60
+6535,Vogelsbergkreis,48,92
+6611,Kassel,70,88
+6631,Fulda,46,67
+6632,Hersfeld-Rotenburg,21,69
+6633,Kassel,81,85
+6634,Schwalm-Eder-Kreis,18,75
+6635,Waldeck-Frankenberg,94,55
+6636,Werra-Meißner-Kreis,40,31
+7111,Koblenz,21,33
+7131,Ahrweiler,47,25
+7132,Altenkirchen (Westerwald),39,37
+7133,Bad Kreuznach,46,60
+7134,Birkenfeld,15,58
+7135,Cochem-Zell,42,49
+7137,Mayen-Koblenz,78,68
+7138,Neuwied,47,34
+7140,Rhein-Hunsrück-Kreis,67,38
+7141,Rhein-Lahn-Kreis,99,96
+7143,Westerwaldkreis,15,23
+7211,Trier,61,48
+7231,Bernkastel-Wittlich,52,73
+7232,Eifelkreis Bitburg-Prüm,51,57
+7233,Vulkaneifel,37,37
+7235,Trier-Saarburg,40,61
+7311,Frankenthal (Pfalz),53,22
+7312,Kaiserslautern,79,22
+7313,Landau in der Pfalz,71,91
+7314,Ludwigshafen am Rhein,83,77
+7315,Mainz,47,21
+7316,Neustadt an der Weinstraße,12,67
+7317,Pirmasens,58,18
+7318,Speyer,25,97
+7319,Worms,97,69
+7320,Zweibrücken,82,81
+7331,Alzey-Worms,44,79
+7332,Bad Dürkheim,19,54
+7333,Donnersbergkreis,15,86
+7334,Germersheim,77,69
+7335,Kaiserslautern,24,18
+7336,Kusel,81,54
+7337,Südliche Weinstraße,50,86
+7338,Rhein-Pfalz-Kreis,10,58
+7339,Mainz-Bingen,90,43
+7340,Südwestpfalz,11,23
+8111,Stuttgart,91,27
+8115,Böblingen,74,85
+8116,Esslingen,93,65
+8117,Göppingen,45,86
+8118,Ludwigsburg,31,100
+8119,Rems-Murr-Kreis,17,92
+8121,Heilbronn,33,31
+8125,Heilbronn,54,87
+8126,Hohenlohekreis,32,29
+8127,Schwäbisch Hall,33,70
+8128,Main-Tauber-Kreis,82,25
+8135,Heidenheim,64,100
+8136,Ostalbkreis,78,30
+8211,Baden-Baden,76,84
+8212,Karlsruhe,51,45
+8215,Karlsruhe,72,85
+8216,Rastatt,25,28
+8221,Heidelberg,26,42
+8222,Mannheim,33,24
+8225,Neckar-Odenwald-Kreis,39,58
+8226,Rhein-Neckar-Kreis,72,13
+8231,Pforzheim,36,54
+8235,Calw,91,95
+8236,Enzkreis,85,12
+8237,Freudenstadt,19,21
+8311,Freiburg im Breisgau,86,97
+8315,Breisgau-Hochschwarzwald,78,34
+8316,Emmendingen,56,65
+8317,Ortenaukreis,83,77
+8325,Rottweil,78,31
+8326,Schwarzwald-Baar-Kreis,37,89
+8327,Tuttlingen,47,71
+8335,Konstanz,85,44
+8336,Lörrach,54,66
+8337,Waldshut,91,30
+8415,Reutlingen,43,87
+8416,Tübingen,100,38
+8417,Zollernalbkreis,78,36
+8421,Ulm,14,80
+8425,Alb-Donau-Kreis,23,49
+8426,Biberach,77,20
+8435,Bodenseekreis,83,33
+8436,Ravensburg,76,50
+8437,Sigmaringen,32,52
+9161,Ingolstadt,71,48
+9162,München,17,22
+9163,Rosenheim,13,41
+9171,Altötting,66,14
+9172,Berchtesgadener Land,40,29
+9173,Bad Tölz-Wolfratshausen,33,23
+9174,Dachau,99,27
+9175,Ebersberg,77,62
+9176,Eichstätt,36,82
+9177,Erding,100,72
+9178,Freising,93,88
+9179,Fürstenfeldbruck,95,44
+9180,Garmisch-Partenkirchen,19,68
+9181,Landsberg am Lech,55,83
+9182,Miesbach,63,95
+9183,Mühldorf a.Inn,35,11
+9184,München,57,23
+9185,Neuburg-Schrobenhausen,91,27
+9186,Pfaffenhofen a.d.Ilm,87,64
+9187,Rosenheim,96,86
+9188,Starnberg,32,40
+9189,Traunstein,17,94
+9190,Weilheim-Schongau,55,97
+9261,Landshut,19,94
+9262,Passau,35,68
+9263,Straubing,18,37
+9271,Deggendorf,71,24
+9272,Freyung-Grafenau,36,48
+9273,Kelheim,82,49
+9274,Landshut,70,40
+9275,Passau,60,92
+9276,Regen,87,20
+9277,Rottal-Inn,80,43
+9278,Straubing-Bogen,46,76
+9279,Dingolfing-Landau,53,86
+9361,Amberg,89,26
+9362,Regensburg,99,13
+9363,Weiden i.d.OPf.,78,22
+9371,Amberg-Sulzbach,24,28
+9372,Cham,81,81
+9373,Neumarkt i.d.OPf.,45,80
+9374,Neustadt a.d.Waldnaab,54,88
+9375,Regensburg,48,12
+9376,Schwandorf,55,53
+9377,Tirschenreuth,52,40
+9461,Bamberg,15,40
+9462,Bayreuth,38,32
+9463,Coburg,31,98
+9464,Hof,31,50
+9471,Bamberg,62,49
+9472,Bayreuth,64,93
+9473,Coburg,63,46
+9474,Forchheim,100,74
+9475,Hof,98,33
+9476,Kronach,93,70
+9477,Kulmbach,85,62
+9478,Lichtenfels,70,81
+9479,Wunsiedel i.Fichtelgebirge,39,75
+9561,Ansbach,53,30
+9562,Erlangen,91,57
+9563,Fürth,23,13
+9564,Nürnberg,47,41
+9565,Schwabach,15,78
+9571,Ansbach,66,21
+9572,Erlangen-Höchstadt,39,54
+9573,Fürth,81,60
+9574,Nürnberger Land,84,34
+9575,Neustadt a.d.Aisch-Bad Windsheim,45,49
+9576,Roth,31,51
+9577,Weißenburg-Gunzenhausen,76,82
+9661,Aschaffenburg,25,58
+9662,Schweinfurt,21,64
+9663,Würzburg,49,49
+9671,Aschaffenburg,37,14
+9672,Bad Kissingen,83,99
+9673,Rhön-Grabfeld,55,59
+9674,Haßberge,80,54
+9675,Kitzingen,75,40
+9676,Miltenberg,89,87
+9677,Main-Spessart,94,92
+9678,Schweinfurt,37,88
+9679,Würzburg,39,67
+9761,Augsburg,45,43
+9762,Kaufbeuren,60,23
+9763,Kempten (Allgäu),87,68
+9764,Memmingen,56,66
+9771,Aichach-Friedberg,29,67
+9772,Augsburg,21,14
+9773,Dillingen a.d.Donau,62,39
+9774,Günzburg,26,12
+9775,Neu-Ulm,24,83
+9776,Lindau (Bodensee),85,35
+9777,Ostallgäu,12,56
+9778,Unterallgäu,93,44
+9779,Donau-Ries,64,25
+9780,Oberallgäu,39,24
+10041,Regionalverband Saarbrücken,69,89
+10042,Merzig-Wadern,19,79
+10043,Neunkirchen,88,44
+10044,Saarlouis,62,75
+10045,Saarpfalz-Kreis,80,84
+10046,St. Wendel,60,12
+11000,Berlin,53,87
+12051,Brandenburg an der Havel,35,92
+12052,Cottbus,92,99
+12053,Frankfurt (Oder),24,30
+12054,Potsdam,14,73
+12060,Barnim,76,60
+12061,Dahme-Spreewald,86,31
+12062,Elbe-Elster,57,66
+12063,Havelland,77,94
+12064,Märkisch-Oderland,52,29
+12065,Oberhavel,28,61
+12066,Oberspreewald-Lausitz,81,84
+12067,Oder-Spree,54,100
+12068,Ostprignitz-Ruppin,57,54
+12069,Potsdam-Mittelmark,42,11
+12070,Prignitz,56,87
+12071,Spree-Neiße,34,86
+12072,Teltow-Fläming,13,20
+12073,Uckermark,37,89
+13003,Rostock,55,82
+13004,Schwerin,19,72
+13071,Mecklenburgische Seenplatte,37,32
+13072,Rostock,42,89
+13073,Vorpommern-Rügen,66,43
+13074,Nordwestmecklenburg,58,97
+13075,Vorpommern-Greifswald,48,97
+13076,Ludwigslust-Parchim,57,19
+14511,Chemnitz,33,76
+14521,Erzgebirgskreis,47,92
+14522,Mittelsachsen,41,54
+14523,Vogtlandkreis,94,38
+14524,Zwickau,64,73
+14612,Dresden,59,67
+14625,Bautzen,24,33
+14626,Görlitz,50,36
+14627,Meißen,28,29
+14628,Sächsische Schweiz-Osterzgebirge,85,99
+14713,Leipzig,76,58
+14729,Leipzig,38,38
+14730,Nordsachsen,85,10
+15001,Dessau-Roßlau,93,64
+15002,Halle (Saale),64,89
+15003,Magdeburg,48,73
+15081,Altmarkkreis Salzwedel,89,15
+15082,Anhalt-Bitterfeld,82,10
+15083,Börde,26,91
+15084,Burgenlandkreis,95,89
+15085,Harz,12,93
+15086,Jerichower Land,19,30
+15087,Mansfeld-Südharz,83,97
+15088,Saalekreis,20,10
+15089,Salzlandkreis,27,83
+15090,Stendal,84,21
+15091,Wittenberg,54,58
+16051,Erfurt,14,11
+16052,Gera,55,15
+16053,Jena,24,93
+16054,Suhl,64,26
+16055,Weimar,36,83
+16061,Eichsfeld,31,47
+16062,Nordhausen,40,79
+16063,Wartburgkreis,38,38
+16064,Unstrut-Hainich-Kreis,41,25
+16065,Kyffhäuserkreis,63,66
+16066,Schmalkalden-Meiningen,90,68
+16067,Gotha,20,96
+16068,Sömmerda,57,64
+16069,Hildburghausen,55,69
+16070,Ilm-Kreis,97,42
+16071,Weimarer Land,30,48
+16072,Sonneberg,27,57
+16073,Saalfeld-Rudolstadt,12,28
+16074,Saale-Holzland-Kreis,72,86
+16075,Saale-Orla-Kreis,57,97
+16076,Greiz,66,22
+16077,Altenburger Land,10,58
+1001,Flensburg,90,10
+1002,Kiel,56,97
+1003,Lübeck,67,51
+1051,Dithmarschen,80,68
+1051,Dithmarschen,12,100
+1054,Nordfriesland,47,95
+1055,Ostholstein,20,38
+1056,Pinneberg,65,52
+1056,Pinneberg,19,54
+1057,Plön,51,97
+1058,Rendsburg-Eckernförde,19,94
+1059,Schleswig-Flensburg,87,36
+1061,Steinburg,95,34
+2000,Hamburg,36,83
+3352,Cuxhaven,74,51
+3352,Cuxhaven,24,84
+3359,Stade,19,26
+3402,Emden,82,80
+3405,Wilhelmshaven,77,42
+3452,Aurich,90,34
+3455,Friesland,47,56
+3457,Leer,58,95
+3457,Leer,15,77
+3462,Wittmund,50,91
+4011,Bremen,25,74
+4012,Bremerhaven,26,41
+8335,Konstanz,63,26
+8435,Bodenseekreis,26,63
+13003,Rostock,21,57
+13072,Rostock,58,87
+13073,Vorpommern-Rügen,18,75
+13074,Nordwestmecklenburg,63,48
+13075,Vorpommern-Greifswald,59,11
