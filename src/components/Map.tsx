@@ -70,7 +70,6 @@ export default function Map({ onSelectFeature }) {
       });
 
       layer.on("click", () => {
-        console.log(`Selected ${type}:`, feature.properties);
         if (onSelectFeature) {
           onSelectFeature({ type, properties: feature.properties });
         }
