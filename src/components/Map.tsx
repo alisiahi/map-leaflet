@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import Legend from "./Legend";
 import { csvParse } from "d3-dsv";
+import { useSelectionStore } from "../store/useSelectionStore"; // <-- import your store
 
 function getColorFromValue(value: number, min: number, max: number) {
   const t = (value - min) / (max - min);
@@ -19,7 +20,7 @@ function highlightLayer(layer: L.Layer, selected: boolean) {
   if ((layer as L.Path).setStyle) {
     (layer as L.Path).setStyle({
       weight: selected ? 5 : 2,
-      color: selected ? "#1e40af" : "transparent", // dark blue or transparent
+      color: selected ? "#1e40af" : "transparent",
     });
   }
 }
@@ -42,6 +43,9 @@ export default function Map() {
 
   const selectedLayerRef = useRef<L.Layer | null>(null);
 
+  // Zustand action
+  const setSelectedKreis = useSelectionStore((s) => s.setSelectedKreis);
+
   // Load GeoJSON and CSV
   useEffect(() => {
     fetch("/kreise.geo.json")
@@ -54,10 +58,8 @@ export default function Map() {
       .then((res) => res.text())
       .then((text) => {
         const parsed = csvParse(text);
-        // Index by AGS for fast lookup, pad to 5 digits
         const byAGS: Record<string, any> = {};
         parsed.forEach((row) => {
-          // Pad AGS to 5 digits (e.g., "1001" => "01001")
           const ags = row.AGS.padStart(5, "0");
           byAGS[ags] = row;
         });
@@ -95,7 +97,7 @@ export default function Map() {
       }
     }
     return {
-      color: "transparent", // <-- Border is transparent by default
+      color: "transparent",
       weight: 2,
       fillColor: color,
       fillOpacity: 0.7,
@@ -120,24 +122,25 @@ export default function Map() {
 
       layer.on("click", () => {
         if (selectedLayerRef.current) {
-          highlightLayer(selectedLayerRef.current, false); // Deselect previous
-          // Optionally, send the previously selected layer to back
+          highlightLayer(selectedLayerRef.current, false);
           if ((selectedLayerRef.current as L.Path).bringToBack) {
             (selectedLayerRef.current as L.Path).bringToBack();
           }
         }
-        highlightLayer(layer, true); // Select current
+        highlightLayer(layer, true);
         if ((layer as L.Path).bringToFront) {
-          (layer as L.Path).bringToFront(); // Bring selected Kreis to front
+          (layer as L.Path).bringToFront();
         }
         selectedLayerRef.current = layer;
+
+        // <-- Zustand: Save AGS and GEN only
+        setSelectedKreis({ ags, gen: name });
       });
     };
   }
 
   return (
     <>
-      {/* Variable selector */}
       <div className="absolute top-4 left-4 z-[1000] bg-white bg-opacity-90 rounded p-2 shadow">
         <label className="mr-2 font-bold">Color by:</label>
         <select
