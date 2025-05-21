@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMapEvent } from "react-leaflet";
 import type { GeoJsonObject } from "geojson";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import Legend from "./Legend";
 import { csvParse } from "d3-dsv";
-import { useSelectionStore } from "../store/useSelectionStore"; // <-- import your store
+import { useSelectionStore } from "../store/useSelectionStore";
+import L from "leaflet";
 
-function getColorFromValue(value: number, min: number, max: number) {
+function getColorFromValue(value, min, max) {
   const t = (value - min) / (max - min);
   const norm = Math.max(0, Math.min(1, t));
   const lightBlue = [219, 234, 254];
@@ -16,16 +16,7 @@ function getColorFromValue(value: number, min: number, max: number) {
   return `rgb(${rgb.join(",")})`;
 }
 
-function highlightLayer(layer: L.Layer, selected: boolean) {
-  if ((layer as L.Path).setStyle) {
-    (layer as L.Path).setStyle({
-      weight: selected ? 5 : 2,
-      color: selected ? "#1e40af" : "transparent",
-    });
-  }
-}
-
-function ZoomListener({ onZoom }: { onZoom: (zoom: number) => void }) {
+function ZoomListener({ onZoom }) {
   useMapEvent("zoomend", (e) => {
     onZoom(e.target.getZoom());
   });
@@ -33,32 +24,26 @@ function ZoomListener({ onZoom }: { onZoom: (zoom: number) => void }) {
 }
 
 export default function Map() {
-  const [zoom, setZoom] = useState<number>(6);
-  const [kreisGeo, setKreisGeo] = useState<GeoJsonObject | null>(null);
-  const [csvData, setCsvData] = useState<Record<string, any>>({});
-  const [colorVariable, setColorVariable] = useState<
-    "question_01" | "question_02"
-  >("question_01");
-  const [valueMinMax, setValueMinMax] = useState<[number, number] | null>(null);
+  const [zoom, setZoom] = useState(6);
+  const [kreisGeo, setKreisGeo] = useState(null);
+  const [csvData, setCsvData] = useState({});
+  const [colorVariable, setColorVariable] = useState("question_01");
+  const [valueMinMax, setValueMinMax] = useState(null);
 
-  const selectedLayerRef = useRef<L.Layer | null>(null);
-
-  // Zustand action
+  const geoJsonRef = useRef();
+  const selectedKreis = useSelectionStore((s) => s.selectedKreis);
   const setSelectedKreis = useSelectionStore((s) => s.setSelectedKreis);
 
-  // Load GeoJSON and CSV
   useEffect(() => {
     fetch("/kreise.geo.json")
       .then((res) => res.json())
-      .then((data) => {
-        setKreisGeo(data);
-      });
+      .then((data) => setKreisGeo(data));
 
     fetch("/kreise_data.csv")
       .then((res) => res.text())
       .then((text) => {
         const parsed = csvParse(text);
-        const byAGS: Record<string, any> = {};
+        const byAGS = {};
         parsed.forEach((row) => {
           const ags = row.AGS.padStart(5, "0");
           byAGS[ags] = row;
@@ -67,11 +52,10 @@ export default function Map() {
       });
   }, []);
 
-  // Compute min/max for selected variable
   useEffect(() => {
     if (!kreisGeo || !csvData) return;
-    const values: number[] = [];
-    (kreisGeo as any).features.forEach((f: any) => {
+    const values = [];
+    kreisGeo.features.forEach((f) => {
       const ags = f.properties.AGS;
       const row = csvData[ags];
       if (row && row[colorVariable] !== undefined) {
@@ -84,8 +68,8 @@ export default function Map() {
     }
   }, [kreisGeo, csvData, colorVariable]);
 
-  // Style function using CSV data
-  const geoStyleKreise = (feature: any) => {
+  // Style function using CSV data and selection
+  const geoStyleKreise = (feature) => {
     if (!valueMinMax) return {};
     const ags = feature.properties.AGS;
     const row = csvData[ags];
@@ -96,17 +80,18 @@ export default function Map() {
         color = getColorFromValue(value, valueMinMax[0], valueMinMax[1]);
       }
     }
+    const isSelected = selectedKreis && ags === selectedKreis.ags;
     return {
-      color: "transparent",
-      weight: 2,
+      color: isSelected ? "#1e40af" : "transparent",
+      weight: isSelected ? 5 : 2,
       fillColor: color,
       fillOpacity: 0.7,
     };
   };
 
   // Feature interaction handler
-  function createOnEachFeature(type: "Kreis") {
-    return (feature: any, layer: L.Layer) => {
+  function createOnEachFeature(type) {
+    return (feature, layer) => {
       const name = feature.properties.GEN;
       const ags = feature.properties.AGS;
       const row = csvData[ags];
@@ -121,23 +106,25 @@ export default function Map() {
       });
 
       layer.on("click", () => {
-        if (selectedLayerRef.current) {
-          highlightLayer(selectedLayerRef.current, false);
-          if ((selectedLayerRef.current as L.Path).bringToBack) {
-            (selectedLayerRef.current as L.Path).bringToBack();
-          }
-        }
-        highlightLayer(layer, true);
-        if ((layer as L.Path).bringToFront) {
-          (layer as L.Path).bringToFront();
-        }
-        selectedLayerRef.current = layer;
-
-        // <-- Zustand: Save AGS and GEN only
         setSelectedKreis({ ags, gen: name });
       });
     };
   }
+
+  // bringToFront for selected Kreis after render
+  useEffect(() => {
+    if (!geoJsonRef.current || !selectedKreis) return;
+    const layers = geoJsonRef.current.getLayers();
+    layers.forEach((layer) => {
+      if (
+        layer.feature &&
+        layer.feature.properties.AGS === selectedKreis.ags &&
+        layer.bringToFront
+      ) {
+        layer.bringToFront();
+      }
+    });
+  }, [selectedKreis, kreisGeo, colorVariable]);
 
   return (
     <>
@@ -145,9 +132,7 @@ export default function Map() {
         <label className="mr-2 font-bold">Color by:</label>
         <select
           value={colorVariable}
-          onChange={(e) =>
-            setColorVariable(e.target.value as "question_01" | "question_02")
-          }
+          onChange={(e) => setColorVariable(e.target.value)}
           className="border rounded px-2 py-1"
         >
           <option value="question_01">Question 01</option>
@@ -171,6 +156,7 @@ export default function Map() {
             data={kreisGeo}
             style={geoStyleKreise}
             onEachFeature={createOnEachFeature("Kreis")}
+            ref={geoJsonRef}
           />
         )}
       </MapContainer>

@@ -9,3 +9,8 @@
   border-radius: 4px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
+/* Hide focus outline for leaflet SVG paths (polygons, etc.) */
+.leaflet-interactive:focus {
+  outline: none;
+}
