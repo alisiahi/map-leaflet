@@ -1,16 +1,22 @@
-import LayerInfo from "./components/LayerInfo";
-import Map from "./components/Map";
+import LeftSidebar from "./components/LeftSidebar";
+import MapView from "./components/MapView";
+import RightSidebar from "./components/RightSidebar";
+
+import { useState } from "react";
 
 const App = () => {
+  const [colorVariable, setColorVariable] = useState("question_01");
+
   return (
-    <div className="flex flex-col h-screen w-screen lg:flex-row">
-      <div className="lg:w-1/2 w-full h-full">
-        <div className="w-full h-full">
-          <Map />
-        </div>
+    <div className="grid grid-cols-5 h-screen w-screen">
+      <div className="col-span-1 bg-blue-100">
+        <LeftSidebar selected={colorVariable} onChange={setColorVariable} />
       </div>
-      <div className="lg:w-1/2 w-full h-full">
-        <LayerInfo />
+      <div className="col-span-2">
+        <MapView colorVariable={colorVariable} />
+      </div>
+      <div className="col-span-2 bg-blue-100">
+        <RightSidebar colorVariable={colorVariable} />
       </div>
     </div>
   );
