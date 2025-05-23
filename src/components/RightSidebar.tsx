@@ -1,13 +1,6 @@
 // components/RightSidebar.tsx
 import React, { useMemo } from "react";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 import { useSelectionStore } from "../store/useSelectionStore";
 
@@ -71,12 +64,6 @@ const RightSidebar: React.FC<{ colorVariable: string }> = ({
                     ))}
                   </Pie>
                   <Tooltip />
-                  {/* <Legend
-                    layout="vertical"
-                    verticalAlign="middle"
-                    align="right"
-                    wrapperStyle={{ paddingLeft: 20 }}
-                  /> */}
                 </PieChart>
               </ResponsiveContainer>
             </div>
