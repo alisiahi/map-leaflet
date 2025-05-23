@@ -82,10 +82,10 @@ export default function Map() {
     }
     const isSelected = selectedKreis && ags === selectedKreis.ags;
     return {
-      color: isSelected ? "#1e40af" : "transparent",
-      weight: isSelected ? 5 : 2,
+      color: isSelected ? "#1e40af" : "#fff",
+      weight: isSelected ? 3 : 1,
       fillColor: color,
-      fillOpacity: 0.7,
+      fillOpacity: 0.6,
     };
   };
 
@@ -106,7 +106,12 @@ export default function Map() {
       });
 
       layer.on("click", () => {
-        setSelectedKreis({ ags, gen: name });
+        const current = useSelectionStore.getState().selectedKreis;
+        if (current && current.ags === ags) {
+          useSelectionStore.getState().clearSelectedKreis(); // Deselect if already selected
+        } else {
+          setSelectedKreis({ ags, gen: name }); // Select new one
+        }
       });
     };
   }
